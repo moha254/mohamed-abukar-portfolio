@@ -594,13 +594,13 @@ main:focus {
 
 .hero__visual {
   position: relative;
-  aspect-ratio: 5 / 6;
+  aspect-ratio: 1;
   width: 100%;
   max-width: 460px;
   justify-self: center;
 }
 
-/* Two rings sit behind the top of the portrait, echoing the reference layout. */
+/* Two rings frame the portrait, echoing the reference layout. */
 .hero__orbit {
   position: absolute;
   left: 50%;
@@ -635,15 +635,16 @@ main:focus {
   box-shadow: 0 0 0 6px var(--color-accent-soft);
 }
 
+/* Passport-style head-and-shoulders portrait, centred inside the rings. */
 .hero__photo {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  width: 68%;
-  aspect-ratio: 2 / 3;
-  transform: translateX(-50%);
+  top: 50%;
+  width: 63%;
+  aspect-ratio: 4 / 5;
+  transform: translate(-50%, -50%);
   border: 6px solid var(--color-surface);
-  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-navy);
   box-shadow: var(--shadow-lg);
@@ -653,7 +654,7 @@ main:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 15%;
+  object-position: 50% 30%;
 }
 
 .hero__float {
@@ -686,13 +687,13 @@ main:focus {
 }
 
 .hero__float--loc {
-  top: 30%;
-  left: -2%;
+  top: 22%;
+  left: -6%;
 }
 
 .hero__float--biz {
-  bottom: 9%;
-  right: -2%;
+  bottom: 14%;
+  right: -6%;
 }
 
 .hero-in {
@@ -728,11 +729,12 @@ main:focus {
     padding: 0.5rem 0.7rem;
   }
   .hero__float--loc {
-    top: 0;
-    left: -8%;
+    top: 2%;
+    left: -10%;
   }
   .hero__float--biz {
-    right: -8%;
+    bottom: 2%;
+    right: -10%;
   }
   .hero__actions .btn {
     flex: 1 1 100%;
@@ -1663,6 +1665,71 @@ a.contact-item:hover strong {
 @media (max-width: 760px) {
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- WhatsApp ---------- */
+.btn--whatsapp {
+  background: var(--color-whatsapp);
+  color: #fff;
+}
+
+.btn--whatsapp:hover {
+  background: var(--color-whatsapp-hover);
+}
+
+.icon-tile--whatsapp {
+  background: var(--color-whatsapp-soft);
+  color: var(--color-whatsapp-hover);
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 56px;
+  padding: 0 1.1rem 0 1rem;
+  border-radius: var(--radius-full);
+  background: var(--color-whatsapp);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  box-shadow: 0 10px 24px -8px rgba(18, 140, 126, 0.6);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.whatsapp-fab:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+.whatsapp-fab:focus-visible {
+  outline-color: var(--color-navy);
+}
+
+/* Icon-only on phones so it never covers content; the accessible name stays. */
+@media (max-width: 600px) {
+  .footer__bottom {
+    padding-bottom: 88px;
+  }
+  .whatsapp-fab {
+    width: 56px;
+    padding: 0;
+    justify-content: center;
+  }
+  .whatsapp-fab__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 }
 

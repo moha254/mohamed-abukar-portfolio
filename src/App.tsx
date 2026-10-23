@@ -8,6 +8,7 @@ import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
 import { SaaSProducts } from './components/SaaSProducts'
 import { Skills } from './components/Skills'
+import { WhatsAppButton } from './components/WhatsAppButton'
 import { useReveal } from './hooks/useReveal'
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

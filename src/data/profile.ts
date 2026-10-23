@@ -8,6 +8,10 @@ export const profile = {
   email: 'mohamedabukar412@gmail.com',
   phone: '+254 792 837 410',
   phoneHref: 'tel:+254792837410',
+  // wa.me opens WhatsApp (app on phones, WhatsApp Web on desktop) with a pre-filled first message.
+  whatsappHref: `https://wa.me/254792837410?text=${encodeURIComponent(
+    "Hello Mohamed, I came across your portfolio and I'd like to get in touch.",
+  )}`,
   github: 'https://github.com/moha254',
   githubHandle: 'moha254',
   business: {

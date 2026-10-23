@@ -35,6 +35,11 @@ export function Footer() {
               <a href={profile.phoneHref}>{profile.phone}</a>
             </li>
             <li>
+              <a href={profile.whatsappHref} target="_blank" rel="noopener noreferrer">
+                WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
               <a href={profile.github} target="_blank" rel="noopener noreferrer">
                 GitHub<span className="sr-only"> (opens in a new tab)</span>
               </a>

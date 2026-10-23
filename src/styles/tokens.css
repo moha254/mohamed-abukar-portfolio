@@ -27,6 +27,10 @@
   --color-warning: #8a5a00;
   --color-warning-soft: #fdf1d8;
   --color-neutral-soft: #eceef3;
+  /* Darker than WhatsApp's #25D366 so white text meets WCAG AA contrast. */
+  --color-whatsapp: #0f7a40;
+  --color-whatsapp-hover: #0b6334;
+  --color-whatsapp-soft: #e2f6ea;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;

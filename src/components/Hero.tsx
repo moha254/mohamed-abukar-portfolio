@@ -56,16 +56,16 @@ export function Hero() {
           <picture className="hero__photo">
             <source
               type="image/webp"
-              srcSet="/images/mohamed-abukar-480.webp 480w, /images/mohamed-abukar-800.webp 800w"
-              sizes="(max-width: 520px) 240px, (max-width: 900px) 300px, 400px"
+              srcSet="/images/mohamed-abukar-400.webp 400w, /images/mohamed-abukar-600.webp 600w"
+              sizes="(max-width: 520px) 170px, (max-width: 900px) 220px, 290px"
             />
             <img
-              src="/images/mohamed-abukar-800.jpg"
-              srcSet="/images/mohamed-abukar-480.jpg 480w, /images/mohamed-abukar-800.jpg 800w"
-              sizes="(max-width: 520px) 240px, (max-width: 900px) 300px, 400px"
-              width={800}
-              height={1200}
-              alt="Portrait of Mohamed Abukar in a navy suit and blue tie"
+              src="/images/mohamed-abukar-600.jpg"
+              srcSet="/images/mohamed-abukar-400.jpg 400w, /images/mohamed-abukar-600.jpg 600w"
+              sizes="(max-width: 520px) 170px, (max-width: 900px) 220px, 290px"
+              width={600}
+              height={750}
+              alt="Head-and-shoulders portrait of Mohamed Abukar in a navy suit and blue tie"
               fetchPriority="high"
               decoding="async"
             />
