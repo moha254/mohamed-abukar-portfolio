@@ -50,21 +50,34 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="hero__visual hero-in" style={delay(200)} aria-hidden="true">
-          <div className="hero__orbit hero__orbit--1" />
-          <div className="hero__orbit hero__orbit--2" />
-          <div className="hero__disc">
-            <span className="hero__monogram">MA</span>
-            <span className="hero__disc-caption">Software · Programmes · Operations</span>
-          </div>
-          <div className="hero__float hero__float--loc">
+        <div className="hero__visual hero-in" style={delay(200)}>
+          <div className="hero__orbit hero__orbit--1" aria-hidden="true" />
+          <div className="hero__orbit hero__orbit--2" aria-hidden="true" />
+          <picture className="hero__photo">
+            <source
+              type="image/webp"
+              srcSet="/images/mohamed-abukar-480.webp 480w, /images/mohamed-abukar-800.webp 800w"
+              sizes="(max-width: 520px) 240px, (max-width: 900px) 300px, 400px"
+            />
+            <img
+              src="/images/mohamed-abukar-800.jpg"
+              srcSet="/images/mohamed-abukar-480.jpg 480w, /images/mohamed-abukar-800.jpg 800w"
+              sizes="(max-width: 520px) 240px, (max-width: 900px) 300px, 400px"
+              width={800}
+              height={1200}
+              alt="Portrait of Mohamed Abukar in a navy suit and blue tie"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
+          <div className="hero__float hero__float--loc" aria-hidden="true">
             <MapPin size={16} />
             <div>
               <small>Based in</small>
               <strong>Nairobi, Kenya</strong>
             </div>
           </div>
-          <div className="hero__float hero__float--biz">
+          <div className="hero__float hero__float--biz" aria-hidden="true">
             <Briefcase size={16} />
             <div>
               <small>Founder</small>

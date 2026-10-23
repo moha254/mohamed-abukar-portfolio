@@ -594,26 +594,33 @@ main:focus {
 
 .hero__visual {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 5 / 6;
   width: 100%;
   max-width: 460px;
   justify-self: center;
 }
 
+/* Two rings sit behind the top of the portrait, echoing the reference layout. */
 .hero__orbit {
   position: absolute;
+  left: 50%;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid var(--color-border-strong);
+  transform: translateX(-50%);
 }
 
 .hero__orbit--1 {
-  inset: 0;
+  top: 0;
+  width: 100%;
 }
 
 .hero__orbit--2 {
-  inset: 9%;
+  top: 8%;
+  width: 84%;
   border-style: dashed;
   border-color: #c4cfe9;
+  background: radial-gradient(circle at 50% 40%, #dfe7fb, transparent 70%);
 }
 
 .hero__orbit--1::after {
@@ -628,39 +635,25 @@ main:focus {
   box-shadow: 0 0 0 6px var(--color-accent-soft);
 }
 
-.hero__disc {
+.hero__photo {
   position: absolute;
-  inset: 19%;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: var(--space-2);
-  border-radius: 50%;
-  background: linear-gradient(150deg, var(--color-navy-2), var(--color-navy));
-  color: #fff;
+  left: 50%;
+  bottom: 0;
+  width: 68%;
+  aspect-ratio: 2 / 3;
+  transform: translateX(-50%);
+  border: 6px solid var(--color-surface);
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-navy);
   box-shadow: var(--shadow-lg);
 }
 
-.hero__monogram {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(3.5rem, 2rem + 5vw, 5.5rem);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  background: linear-gradient(180deg, #fff 30%, var(--color-navy-accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero__disc-caption {
-  max-width: 70%;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-navy-muted);
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 15%;
 }
 
 .hero__float {
@@ -693,13 +686,13 @@ main:focus {
 }
 
 .hero__float--loc {
-  top: 8%;
-  left: -4%;
+  top: 30%;
+  left: -2%;
 }
 
 .hero__float--biz {
-  bottom: 8%;
-  right: -4%;
+  bottom: 9%;
+  right: -2%;
 }
 
 .hero-in {
@@ -735,10 +728,11 @@ main:focus {
     padding: 0.5rem 0.7rem;
   }
   .hero__float--loc {
-    left: -10%;
+    top: 0;
+    left: -8%;
   }
   .hero__float--biz {
-    right: -10%;
+    right: -8%;
   }
   .hero__actions .btn {
     flex: 1 1 100%;
