@@ -1,0 +1,91 @@
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { GithubIcon } from './GithubIcon'
+import { profile } from '../data/profile'
+import { DownloadCVButton } from './DownloadCVButton'
+import { SectionHeader } from './SectionHeader'
+
+const topics = [
+  'Software development opportunities',
+  'SaaS and business systems',
+  'Technology projects',
+  'Programme and operations opportunities',
+  'Professional collaboration',
+]
+
+export function Contact() {
+  return (
+    <section id="contact" className="section" aria-labelledby="contact-title">
+      <div className="container contact__grid">
+        <div>
+          <SectionHeader
+            id="contact-title"
+            eyebrow="Contact"
+            title="Let's work together"
+            intro="Have a role, a project or an idea in mind? I'm happy to talk about:"
+          />
+          <ul className="check-list" data-reveal>
+            {topics.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card contact-card" data-reveal>
+          <ul className="contact-list">
+            <li>
+              <a href={`mailto:${profile.email}`} className="contact-item">
+                <span className="icon-tile" aria-hidden="true">
+                  <Mail size={20} />
+                </span>
+                <span>
+                  <small>Email</small>
+                  <strong>{profile.email}</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={profile.phoneHref} className="contact-item">
+                <span className="icon-tile" aria-hidden="true">
+                  <Phone size={20} />
+                </span>
+                <span>
+                  <small>Phone</small>
+                  <strong>{profile.phone}</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="contact-item">
+                <span className="icon-tile" aria-hidden="true">
+                  <GithubIcon size={20} />
+                </span>
+                <span>
+                  <small>GitHub</small>
+                  <strong>github.com/{profile.githubHandle}</strong>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <div className="contact-item">
+                <span className="icon-tile" aria-hidden="true">
+                  <MapPin size={20} />
+                </span>
+                <span>
+                  <small>Location</small>
+                  <strong>{profile.location}</strong>
+                </span>
+              </div>
+            </li>
+          </ul>
+          <div className="contact-card__actions">
+            <a href={`mailto:${profile.email}`} className="btn btn--primary">
+              <Mail aria-hidden="true" size={18} /> Send an Email
+            </a>
+            <DownloadCVButton variant="secondary" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
