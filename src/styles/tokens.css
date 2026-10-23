@@ -27,6 +27,8 @@
   --color-warning: #8a5a00;
   --color-warning-soft: #fdf1d8;
   --color-neutral-soft: #eceef3;
+  --color-danger: #b42318;
+  --color-danger-soft: #fdecea;
   /* Darker than WhatsApp's #25D366 so white text meets WCAG AA contrast. */
   --color-whatsapp: #0f7a40;
   --color-whatsapp-hover: #0b6334;
